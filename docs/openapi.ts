@@ -6,10 +6,11 @@ export const openApiDoc = new OpenApiDoc({
 } as OpenAPIDocConfig);
 
 import('./prompt.doc');
+import('./category.doc');
 
 export const commonController = openApiDoc.createController('');
 
 export const propmtTag = openApiDoc.createTag('Промпты');
-export const category = openApiDoc.createTag('Категории');
+export const categoryTag = openApiDoc.createTag('Категории');
 
 export const openApiDocument = openApiDoc.compileOpenApi();
