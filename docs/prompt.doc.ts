@@ -18,7 +18,7 @@ const promptController = commonController.createController('/prompt', [
 promptController.addApiMethod('/:id', {
   method: 'GET',
   title: 'Страница промпта',
-  isImplemented: false,
+  isImplemented: true,
   requiresAuthorization: false,
   pathParams: GetPromptRequestDto,
   responses: {
@@ -31,8 +31,8 @@ promptController.addApiMethod('/:id', {
 promptController.addApiMethod('', {
   method: 'POST',
   title: 'Создание нового промпта',
-  isImplemented: false,
-  requiresAuthorization: false,
+  isImplemented: true,
+  requiresAuthorization: true,
   requestBody: CreatePromptRequestDto,
   responses: {
     '200': [CreatePromptResponseDto],

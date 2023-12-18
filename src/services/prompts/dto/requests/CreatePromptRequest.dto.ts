@@ -30,5 +30,5 @@ export class CreatePromptRequestDto {
   })
   @IsString()
   @IsOptional()
-  categoryId: number | null;
+  categoryId: string | null;
 }

@@ -27,8 +27,8 @@ categoryController.addApiMethod('/:id', {
 categoryController.addApiMethod('', {
   method: 'POST',
   title: 'Создание новой категории',
-  isImplemented: false,
-  requiresAuthorization: false,
+  isImplemented: true,
+  requiresAuthorization: true,
   requestBody: CreateCategoryRequestDto,
   responses: {
     '200': [CreateCategoryResponseDto],

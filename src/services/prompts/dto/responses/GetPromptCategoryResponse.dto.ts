@@ -1,4 +1,5 @@
 import { StringProperty } from '@ivankrtv/openapidoc/dist';
+import { CategoryEntity } from '../../../categories/entities/category.entity';
 
 export class GetPromptCategoryResponseDto {
   @StringProperty({
@@ -12,4 +13,9 @@ export class GetPromptCategoryResponseDto {
     example: 'Business',
   })
   title: string;
+
+  constructor(category: CategoryEntity) {
+    this.id = category.id;
+    this.title = category.title;
+  }
 }

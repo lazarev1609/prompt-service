@@ -1,5 +1,6 @@
 import { ObjectProperty, StringProperty } from '@ivankrtv/openapidoc/dist';
 import { GetPromptCategoryResponseDto } from './GetPromptCategoryResponse.dto';
+import { PromptEntity } from '../../entities/prompt.entity';
 
 export class GetPromptResponseDto {
   @StringProperty({
@@ -29,4 +30,14 @@ export class GetPromptResponseDto {
 
   @ObjectProperty({ description: 'Категория промпта' })
   category: GetPromptCategoryResponseDto;
+
+  constructor(prompt: PromptEntity) {
+    this.id = prompt.id;
+    this.title = prompt.title;
+    this.description = prompt.description;
+    this.body = prompt.body;
+    this.category = prompt.category
+      ? new GetPromptCategoryResponseDto(prompt.category)
+      : null;
+  }
 }
