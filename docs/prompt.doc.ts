@@ -9,6 +9,7 @@ import { NotFoundErrorDto } from './errors/not-found-error.dto';
 import { CreatePromptResponseDto } from '../src/services/prompts/dto/responses/CreatePromptResponse.dto';
 import { CreatePromptRequestDto } from '../src/services/prompts/dto/requests/CreatePromptRequest.dto';
 import { DeletePromptRequestDto } from '../src/services/prompts/dto/requests/DeletePromptRequest.dto';
+import { GetPromptRequestDto } from '../src/services/prompts/dto/requests/GetPromptRequest.dto';
 
 const promptController = commonController.createController('/prompt', [
   propmtTag,
@@ -19,6 +20,7 @@ promptController.addApiMethod('/:id', {
   title: 'Страница промпта',
   isImplemented: false,
   requiresAuthorization: false,
+  pathParams: GetPromptRequestDto,
   responses: {
     '200': [GetPromptResponseDto],
     '400': [DomainErrorDto, ValidationErrorDto],
@@ -44,7 +46,7 @@ promptController.addApiMethod('/:id', {
   title: 'Удаление промпта',
   isImplemented: false,
   requiresAuthorization: true,
-  requestBody: DeletePromptRequestDto,
+  pathParams: DeletePromptRequestDto,
   responses: {
     '200': [],
     '400': [DomainErrorDto, ValidationErrorDto],
